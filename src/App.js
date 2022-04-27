@@ -109,7 +109,10 @@ function App() {
           {(stats.lives>0)?"":('#'+hexList[currentHexIndex])}
         </Grid>
         <Grid item mb={2}>
-          <form onSubmit={()=>{submitHex(values.hex);} }>
+          <form onSubmit={(e)=>{
+            e.preventDefault();
+            submitHex(values.hex);
+          } }>
             <FormControl sx={{ m: 0, width:300 }}>
               <InputLabel htmlFor="outlined-adornment-hex">Hex Value</InputLabel>
               <OutlinedInput
